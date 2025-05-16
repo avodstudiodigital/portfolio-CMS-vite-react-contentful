@@ -2,8 +2,8 @@
 import { createClient } from 'contentful';
 
 // These values should come from environment variables in production
-const CONTENTFUL_SPACE_ID = 'your-space-id';
-const CONTENTFUL_ACCESS_TOKEN = 'your-access-token';
+const CONTENTFUL_SPACE_ID = import.meta.env.VITE_CONTENTFUL_SPACE_ID || 'your-space-id';
+const CONTENTFUL_ACCESS_TOKEN = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN || 'your-access-token';
 
 // Create a Contentful client
 export const contentfulClient = createClient({

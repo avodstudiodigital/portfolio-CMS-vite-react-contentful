@@ -6,8 +6,15 @@ import RichText from '@/components/RichText';
 import SkillBadge from '@/components/SkillBadge';
 import { getEntries, getAboutInfo, ContentTypes, getAssetUrl, AboutFields } from '@/lib/contentful';
 
+interface AboutInfoType {
+  fields: AboutFields;
+  sys: {
+    id: string;
+  };
+}
+
 const AboutPage = () => {
-  const [aboutInfo, setAboutInfo] = useState<{fields: AboutFields} | null>(null);
+  const [aboutInfo, setAboutInfo] = useState<AboutInfoType | null>(null);
   const [skills, setSkills] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   
@@ -16,7 +23,9 @@ const AboutPage = () => {
       try {
         // Fetch about information
         const aboutData = await getAboutInfo();
-        setAboutInfo(aboutData);
+        if (aboutData) {
+          setAboutInfo(aboutData as AboutInfoType);
+        }
         
         // Fetch skills
         const skillsData = await getEntries<any>(ContentTypes.SKILL);
