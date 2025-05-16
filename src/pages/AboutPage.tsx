@@ -6,6 +6,7 @@ import RichText from '@/components/RichText';
 import SkillBadge from '@/components/SkillBadge';
 import { getEntries, getAboutInfo, ContentTypes, getAssetUrl, AboutFields } from '@/lib/contentful';
 
+// Define the structure of an entry from Contentful
 interface AboutInfoType {
   fields: AboutFields;
   sys: {
@@ -24,7 +25,8 @@ const AboutPage = () => {
         // Fetch about information
         const aboutData = await getAboutInfo();
         if (aboutData) {
-          setAboutInfo(aboutData as AboutInfoType);
+          // Use type assertion here for better type safety
+          setAboutInfo(aboutData as unknown as AboutInfoType);
         }
         
         // Fetch skills
@@ -110,7 +112,7 @@ const AboutPage = () => {
                     
                     {aboutInfo.fields.socialLinks && (
                       <div className="mt-6 flex flex-wrap gap-3">
-                        {Object.entries(aboutInfo.fields.socialLinks as Record<string, string>).map(([platform, url]) => (
+                        {Object.entries(aboutInfo.fields.socialLinks).map(([platform, url]) => (
                           <a 
                             key={platform}
                             href={url}
