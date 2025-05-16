@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import RichText from '@/components/RichText';
 import SkillBadge from '@/components/SkillBadge';
-import { getEntries, getAboutInfo, ContentTypes, getAssetUrl } from '@/lib/contentful';
+import { getEntries, getAboutInfo, ContentTypes, getAssetUrl, AboutFields } from '@/lib/contentful';
 
 const AboutPage = () => {
-  const [aboutInfo, setAboutInfo] = useState<any | null>(null);
+  const [aboutInfo, setAboutInfo] = useState<{fields: AboutFields} | null>(null);
   const [skills, setSkills] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   
@@ -101,10 +101,10 @@ const AboutPage = () => {
                     
                     {aboutInfo.fields.socialLinks && (
                       <div className="mt-6 flex flex-wrap gap-3">
-                        {Object.entries(aboutInfo.fields.socialLinks).map(([platform, url]) => (
+                        {Object.entries(aboutInfo.fields.socialLinks as Record<string, string>).map(([platform, url]) => (
                           <a 
                             key={platform}
-                            href={url as string}
+                            href={url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-4 py-2 bg-secondary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors"
