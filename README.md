@@ -210,10 +210,6 @@ npm run build
 
 3. **Rich text not rendering**: Make sure your Rich Text fields are properly structured and the `@contentful/rich-text-react-renderer` package is correctly used.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🙏 Acknowledgements
 
 - [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
@@ -221,3 +217,20 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components
 - [Contentful](https://www.contentful.com/) - Headless CMS
+
+## License
+
+This project is licensed under the GPL License - see the LICENSE file for details.
+
+
+## ✨ Credits
+
+Designed and developed by [Avodstudio](https://avodstudio.com)
+
+## 📧 Contact
+
+For any inquiries, please reach out through the contact form on our website.
+
+---
+
+Made with ❤️ by Avodstudio | developed by Mohamed||Frank
