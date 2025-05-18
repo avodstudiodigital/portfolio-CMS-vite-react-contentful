@@ -3,7 +3,7 @@
 
 A modern, responsive portfolio website built with Vite, React, TypeScript, and Contentful CMS. This project provides a clean, customizable portfolio template that pulls content dynamically from Contentful.
 
-![Portfolio Website Screenshot](https://via.placeholder.com/800x400?text=Portfolio+Website)
+![Portfolio Website Screenshot](public/portfolio-image.jpg)
 
 ## 🚀 Features
 
